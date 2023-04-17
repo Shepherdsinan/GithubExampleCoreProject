@@ -2,7 +2,7 @@
 
 namespace BusinessLayer.Abstract;
 
-public interface IFeature : IGenericService<Feature>
+public interface IFeatureService : IGenericService<Feature>
 {
     
 }

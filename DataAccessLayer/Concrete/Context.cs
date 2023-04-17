@@ -7,7 +7,7 @@ public class Context : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2019;database=Githubproject;integrated security=true;");
+        optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2022;database=Githubproject;integrated security=true;");
     }
 
     public DbSet<About> Abouts { get; set; }
