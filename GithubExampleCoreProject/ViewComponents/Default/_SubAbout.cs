@@ -4,13 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GithubExampleCoreProject.ViewComponents.Default;
 
-public class _Feature : ViewComponent
+public class _SubAbout : ViewComponent
 {
-    private FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+    SubAboutManager subAboutManager = new SubAboutManager(new EfSubAboutDal());
     public IViewComponentResult Invoke()
     {
-        var values = featureManager.TGetList();
+        var values = subAboutManager.TGetList();
         return View(values);
     }
-
 }
