@@ -9,8 +9,9 @@ public class _Feature : ViewComponent
     private FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
     public IViewComponentResult Invoke()
     {
-        var values = featureManager.TGetList();
-        return View(values);
+       // var values = featureManager.TGetList();
+       //ViewBag.image1 = featureManager.TGetByID();
+        return View();
     }
 
 }
