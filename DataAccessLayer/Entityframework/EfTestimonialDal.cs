@@ -4,7 +4,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.Entityframework;
 
-public class EfTestimonial : GenericRepository<Testimonial>,ITestimonialDal
+public class EfTestimonialDal : GenericRepository<Testimonial>,ITestimonialDal
 {
     
 }
