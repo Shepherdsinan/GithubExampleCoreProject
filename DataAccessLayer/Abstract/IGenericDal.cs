@@ -7,4 +7,6 @@ public interface IGenericDal<T>
     void Delete(T entity);
 
     List<T> GetList();
+
+    T GetByID(int id);
 }
