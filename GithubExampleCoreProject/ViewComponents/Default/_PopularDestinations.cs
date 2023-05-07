@@ -7,7 +7,7 @@ namespace GithubExampleCoreProject.ViewComponents.Default;
 
 public class _PopularDestinations : ViewComponent
 {
-    private DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
+    DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
     public IViewComponentResult Invoke()
     {
         var values = destinationManager.TGetList();
