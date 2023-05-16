@@ -10,10 +10,9 @@ public class Context : DbContext
     //     optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2022;database=Githubproject;integrated security=true;");
     // }
 
-    public Context(DbContextOptions<Context> options) : base(options)
-    {
-        
-    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+        => optionsBuilder.UseSqlite(@"Data Source=C:\Users\Sinan\source\repos\GithubExampleCoreProject\GithubExampleCoreProject\database.db");
+
     public DbSet<About> Abouts { get; set; }
     public DbSet<About2> About2s { get; set; }
     public DbSet<Contact> Contacts { get; set; }

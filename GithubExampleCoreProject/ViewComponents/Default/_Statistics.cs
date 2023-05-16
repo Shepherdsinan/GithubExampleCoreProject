@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GithubExampleCoreProject.ViewComponents.Default;
 
