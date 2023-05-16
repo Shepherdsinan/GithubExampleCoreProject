@@ -5,11 +5,15 @@ namespace DataAccessLayer.Concrete;
 
 public class Context : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2022;database=Githubproject;integrated security=true;");
-    }
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // {
+    //     optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2022;database=Githubproject;integrated security=true;");
+    // }
 
+    public Context(DbContextOptions<Context> options) : base(options)
+    {
+        
+    }
     public DbSet<About> Abouts { get; set; }
     public DbSet<About2> About2s { get; set; }
     public DbSet<Contact> Contacts { get; set; }
