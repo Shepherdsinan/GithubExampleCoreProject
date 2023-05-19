@@ -1,4 +1,6 @@
-﻿namespace DataAccessLayer.Abstract;
+﻿using System.Linq.Expressions;
+
+namespace DataAccessLayer.Abstract;
 
 public interface IGenericDal<T>
 {
@@ -9,4 +11,6 @@ public interface IGenericDal<T>
     List<T> GetList();
 
     T GetByID(int id);
+
+    List<T> GetListByFilter(Expression<Func<T, bool>> filter);
 }
