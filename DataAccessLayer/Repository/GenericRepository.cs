@@ -36,6 +36,7 @@ public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         using var c = new Context();
         c.Add(entity);
+        c.SaveChanges();
     }
 
     public void Update(T entity)

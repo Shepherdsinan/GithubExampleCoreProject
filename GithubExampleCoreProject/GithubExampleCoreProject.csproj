@@ -28,4 +28,8 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\_AddComment\Default.cshtml" />
+  </ItemGroup>
+
 </Project>
