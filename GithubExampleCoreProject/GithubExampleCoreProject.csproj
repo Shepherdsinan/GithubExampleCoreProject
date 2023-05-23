@@ -34,4 +34,10 @@
     <_ContentIncludedByDefault Remove="Views\Shared\Components\_AddComment\Default.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Areas\Member\Views\" />
+  </ItemGroup>
+
 </Project>
