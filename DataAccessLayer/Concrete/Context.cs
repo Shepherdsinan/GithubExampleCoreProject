@@ -4,15 +4,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Concrete;
 
-public class Context : IdentityDbContext<AppUser,AppRole,int>
+public class Context : IdentityDbContext<AppUser, AppRole, int>
 {
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     // {
     //     optionsBuilder.UseSqlServer("server=SHEPHERD\\SQL2022;database=Githubproject;integrated security=true;");
     // }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
-        => optionsBuilder.UseSqlite(@"Data Source=database.db");
+    //Migration için yol verildi
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+    //     => optionsBuilder.UseSqlite(@"Data Source=C:\Users\ANEL\RiderProjects\GithubExampleCoreProject\GithubExampleCoreProject\database.db");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlite(
+            @"Data Source=database.db");
 
     public DbSet<About> Abouts { get; set; }
     public DbSet<About2> About2s { get; set; }
@@ -25,5 +28,5 @@ public class Context : IdentityDbContext<AppUser,AppRole,int>
     public DbSet<SubAbout> SubAbouts { get; set; }
     public DbSet<Testimonial> Testimonials { get; set; }
     public DbSet<Comment> Comments { get; set; }
-
+    public DbSet<Reservation> Reservations { get; set; }
 }
