@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="database" uuid="c1db60e5-e20f-476f-a613-720bdd86d572">
+    <data-source source="LOCAL" name="database" uuid="86c18180-807b-483e-af96-7bcd5eeb0db8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Sinan\source\repos\GithubExampleCoreProject\GithubExampleCoreProject\database.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\ANEL\RiderProjects\GithubExampleCoreProject\GithubExampleCoreProject\database.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/sqlite-jdbc-3.40.1.jar</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/sqlite-jdbc-3.40.1.jar</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/xerial-sqlite-license.txt</url>
         </library>
       </libraries>
     </data-source>
