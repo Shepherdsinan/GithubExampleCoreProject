@@ -1,0 +1,34 @@
+@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Onay Bekleyen Rezervasyonlar</h2>
+@if (!Model.Any())
+{
+    <span>Onay Bekleyen Rezervasyon Bulunamadı...</span>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Lokasyon</th>
+            <th>Kişi Sayısı</th>
+            <th>Rezerasyon Tarihi</th>
+            <th>Durum</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ReservationID</td>
+                <td>@item.Destination.City</td>
+                <td>@item.PersonCount</td>
+                <td>@item.ReservationDate</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+}
