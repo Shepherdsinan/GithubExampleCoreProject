@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GithubExampleCoreProject.Areas.Member.Controllers;
 
 [Area("Member")]
+[Route("Member/[controller]/[action]")]
 public class DashboardController : Controller
 {
     private readonly UserManager<AppUser> _userManager;
