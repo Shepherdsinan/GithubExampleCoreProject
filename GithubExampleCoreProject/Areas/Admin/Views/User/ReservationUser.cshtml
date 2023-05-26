@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<a href="#" onclick="window.history.back()">GERİ DÖN</a>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin/</span> Kullanıcının Geçmiş Rezervasyonları </h4>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        @*<th>Misafir Ad Soyad</th>*@
+        <th>Rota</th>
+        <th>Kişi Sayısı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @{ count =+ 1;}
+            <td>@count</td>
+            @*<td>@item.AppUser.Name @item.AppUser.Surname</td>*@
+            <td>@item.Destination.City</td>
+            <td>@item.PersonCount</td>
+            <td>@(((DateTime)item.ReservationDate).ToString("dd-MMM-yyyy"))</td>
+            <td><a href="#" class="btn btn-outline-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>
