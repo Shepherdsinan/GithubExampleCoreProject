@@ -1,4 +1,9 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using BusinessLayer.Container;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.Entityframework;
 using EntityLayer.Concrete;
 using GithubExampleCoreProject.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -9,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+
+builder.Services.ContainerDependencies();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddMvc(config =>
