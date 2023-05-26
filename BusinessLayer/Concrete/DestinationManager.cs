@@ -15,12 +15,12 @@ public class DestinationManager : IDestinationService
 
     public void TAdd(Destination entity)
     {
-        throw new NotImplementedException();
+        _destinationDal.Insert(entity);
     }
 
     public void TDelete(Destination entity)
     {
-        throw new NotImplementedException();
+        _destinationDal.Delete(entity);
     }
 
     public Destination TGetByID(int id)
@@ -35,6 +35,6 @@ public class DestinationManager : IDestinationService
 
     public void TUpdate(Destination entity)
     {
-        throw new NotImplementedException();
+        _destinationDal.Update(entity);
     }
 }
