@@ -19,17 +19,17 @@ public class CommentManager : ICommentService
 
     public void TDelete(Comment entity)
     {
-        throw new NotImplementedException();
+        _commentDal.Delete(entity);
     }
 
     public void TUpdate(Comment entity)
     {
-        throw new NotImplementedException();
+        _commentDal.Update(entity);
     }
 
     public List<Comment> TGetList()
     {
-        throw new NotImplementedException();
+        return _commentDal.GetList();
     }
 
     public List<Comment> TGetDestinationById(int id)
@@ -37,8 +37,13 @@ public class CommentManager : ICommentService
         return _commentDal.GetListByFilter(x => x.DestinationID == id);
     }
 
+    public List<Comment> TGetListCommentWithDestination()
+    {
+        return _commentDal.GetListCommentWithDestination();
+    }
+
     public Comment TGetByID(int id)
     {
-        throw new NotImplementedException();
+        return _commentDal.GetByID(id);
     }
 }
