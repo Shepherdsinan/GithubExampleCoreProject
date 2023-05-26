@@ -16,5 +16,7 @@ public static class Extensions
         services.AddScoped<IDestinationDal, EfDestinationDal>();
         services.AddScoped<IAppUserService, AppUserManager>();
         services.AddScoped<IAppUserDal, EfAppUserDal>();
+        services.AddScoped<IReservationService, ReservationManager>();
+        services.AddScoped<IReservationDal, EfReservationDal>();
     }
 }
