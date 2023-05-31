@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Guide
+
+@{
+    ViewBag.Title = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a href="#" onclick="window.history.back()">GERİ DÖN</a>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Rehberlerimiz/</span> Yeni Rehber Oluştur </h4>
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Ad Soyad")
+        <input type="text" asp-for="Name" class="form-control">
+    </div>
+    <br/>
+    <div class="form-group">
+        @Html.Label("Rehber Foto")
+        <input type="text" asp-for="Image" class="form-control">
+    </div>
+    <br/>
+    <div class="form-group">
+        @Html.Label("Instagram Url")
+        <input type="text" asp-for="InstagramUrl" class="form-control">
+    </div>
+    <br/>
+    <div class="form-group">
+        @Html.Label("Twitter Url")
+        <input type="text" asp-for="TwitterUrl" class="form-control">
+    </div>
+    <br/>
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        <textarea cols="30" rows="5" asp-for="Description" class="form-control"></textarea>
+    </div>
+    <br/>
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>
