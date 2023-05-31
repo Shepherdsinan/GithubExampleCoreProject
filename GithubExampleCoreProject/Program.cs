@@ -11,6 +11,12 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddLogging(x =>
+{
+    x.ClearProviders();
+    x.SetMinimumLevel(LogLevel.Debug);
+    x.AddDebug();
+});
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
@@ -28,6 +34,10 @@ builder.Services.AddMvc(config =>
 builder.Services.AddMvc();
 var app = builder.Build();
 
+var path = Directory.GetCurrentDirectory();
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
+loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -36,6 +46,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();

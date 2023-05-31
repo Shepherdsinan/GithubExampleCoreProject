@@ -15,11 +15,21 @@ namespace GithubExampleCoreProject.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Index sayfası çağırıldı");
+            _logger.LogError("Error log çağrıldı");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            DateTime date = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+            _logger.LogInformation(date + "Privacy sayfası çağırıldı");
+            return View();
+        }
+
+        public IActionResult Test()
+        {
+            _logger.LogInformation("Test Sayfası çağırıldı");
             return View();
         }
 
