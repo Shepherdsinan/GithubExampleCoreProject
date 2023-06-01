@@ -39,7 +39,7 @@ public class GuideController : Controller
         if (result.IsValid)
         {
             _guideService.TAdd(guide);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
         else
         {
@@ -65,8 +65,13 @@ public class GuideController : Controller
         _guideService.TUpdate(guide);
         return RedirectToAction("Index", "Guide", new { area = "Admin" });
     }
-
-    public IActionResult ChangeToTrue(int id)
+    public IActionResult DeleteGuide(int id)
+    {
+        var values = _guideService.TGetByID(id);
+        _guideService.TDelete(values);
+        return RedirectToAction("Index");
+    }
+    public IActionResult ChangeToGuideStat(int id)
     {
         _guideService.ChangeGuideStat(id);
         return RedirectToAction("Index", "Guide", new { area = "Admin" });
