@@ -61,7 +61,7 @@ public class GuideController : Controller
     public IActionResult EditGuide(Guide guide)
     {
         _guideService.TUpdate(guide);
-        return RedirectToAction("Index");
+        return RedirectToAction("Index", "Guide", new { area = "Admin" });
     }
 
     public IActionResult ChangeToTrue(int id)
