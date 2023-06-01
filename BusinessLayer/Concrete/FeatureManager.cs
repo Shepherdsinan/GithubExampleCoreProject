@@ -15,17 +15,17 @@ public class FeatureManager : IFeatureService
 
     public void TAdd(Feature entity)
     {
-        throw new NotImplementedException();
+        _featureDal.Insert(entity);
     }
 
     public void TDelete(Feature entity)
     {
-        throw new NotImplementedException();
+        _featureDal.Delete(entity);
     }
 
     public void TUpdate(Feature entity)
     {
-        throw new NotImplementedException();
+        _featureDal.Update(entity);
     }
 
     public List<Feature> TGetList()
@@ -35,6 +35,6 @@ public class FeatureManager : IFeatureService
 
     public Feature TGetByID(int id)
     {
-        throw new NotImplementedException();
+        return _featureDal.GetByID(id);
     }
 }

@@ -15,17 +15,17 @@ public class TestimonialManager : ITestimonialService
 
    public void TAdd(Testimonial entity)
    {
-      throw new NotImplementedException();
+      _testimonialDal.Insert(entity);
    }
 
    public void TDelete(Testimonial entity)
    {
-      throw new NotImplementedException();
+      _testimonialDal.Delete(entity);
    }
 
    public void TUpdate(Testimonial entity)
    {
-      throw new NotImplementedException();
+      _testimonialDal.Update(entity);
    }
 
    public List<Testimonial> TGetList()
@@ -35,6 +35,6 @@ public class TestimonialManager : ITestimonialService
 
    public Testimonial TGetByID(int id)
    {
-      throw new NotImplementedException();
+      return _testimonialDal.GetByID(id);
    }
 }

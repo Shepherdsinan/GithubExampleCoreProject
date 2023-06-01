@@ -20,22 +20,22 @@ public class ReservationManager : IReservationService
 
     public void TDelete(Reservation entity)
     {
-        throw new NotImplementedException();
+        _reservationDal.Delete(entity);
     }
 
     public void TUpdate(Reservation entity)
     {
-        throw new NotImplementedException();
+        _reservationDal.Update(entity);
     }
 
     public List<Reservation> TGetList()
     {
-        throw new NotImplementedException();
+        return _reservationDal.GetList();
     }
 
     public Reservation TGetByID(int id)
     {
-        throw new NotImplementedException();
+        return _reservationDal.GetByID(id);
     }
 
     public List<Reservation> GetListWithReservationByWaitApproval(int id)

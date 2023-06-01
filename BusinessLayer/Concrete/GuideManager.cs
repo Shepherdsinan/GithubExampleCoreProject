@@ -15,17 +15,17 @@ public class GuideManager : IGuideService
 
     public void TAdd(Guide entity)
     {
-        throw new NotImplementedException();
+        _guideDal.Insert(entity);
     }
 
     public void TDelete(Guide entity)
     {
-        throw new NotImplementedException();
+        _guideDal.Delete(entity);
     }
 
     public void TUpdate(Guide entity)
     {
-        throw new NotImplementedException();
+        _guideDal.Update(entity);
     }
 
     public List<Guide> TGetList()
@@ -35,6 +35,6 @@ public class GuideManager : IGuideService
 
     public Guide TGetByID(int id)
     {
-        throw new NotImplementedException();
+        return _guideDal.GetByID(id);
     }
 }

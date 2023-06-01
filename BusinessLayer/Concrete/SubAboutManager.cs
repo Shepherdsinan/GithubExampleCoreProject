@@ -15,17 +15,17 @@ public class SubAboutManager : ISubAboutService
 
      public void TAdd(SubAbout entity)
      {
-         throw new NotImplementedException();
+         _subAboutDal.Insert(entity);
      }
 
      public void TDelete(SubAbout entity)
      {
-         throw new NotImplementedException();
+         _subAboutDal.Delete(entity);
      }
 
      public void TUpdate(SubAbout entity)
      {
-         throw new NotImplementedException();
+         _subAboutDal.Update(entity);
      }
 
      public List<SubAbout> TGetList()
@@ -35,6 +35,6 @@ public class SubAboutManager : ISubAboutService
 
      public SubAbout TGetByID(int id)
      {
-         throw new NotImplementedException();
+         return _subAboutDal.GetByID(id);
      }
 }
