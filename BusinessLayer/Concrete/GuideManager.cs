@@ -37,4 +37,9 @@ public class GuideManager : IGuideService
     {
         return _guideDal.GetByID(id);
     }
+
+    public void ChangeGuideStat(int id)
+    {
+       _guideDal.ChangeGuideStat(id);
+    }
 }

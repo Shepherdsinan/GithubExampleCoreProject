@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace GithubExampleCoreProject.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Route("Admin/[controller]/[action]/{id?}")]
 public class GuideController : Controller
 {
     private readonly IGuideService _guideService;
@@ -22,6 +23,7 @@ public class GuideController : Controller
         var values = _guideService.TGetList();
         return View(values);
     }
+
 
     [HttpGet]
     public IActionResult AddGuide()
@@ -43,7 +45,7 @@ public class GuideController : Controller
         {
             foreach (var item in result.Errors)
             {
-                ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
             }
 
             return View();
@@ -66,11 +68,7 @@ public class GuideController : Controller
 
     public IActionResult ChangeToTrue(int id)
     {
-        return RedirectToAction("Index");
-    }
-
-    public IActionResult ChangeToFalse(int id)
-    {
-        return RedirectToAction("Index");
+        _guideService.ChangeGuideStat(id);
+        return RedirectToAction("Index", "Guide", new { area = "Admin" });
     }
 }
