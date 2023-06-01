@@ -1,0 +1,15 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a href="#" onclick="window.history.back()">GERİ DÖN</a>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pdf RaporLar/</span> Rapor Seçimi </h4>
+<br>
+<a href="/PdfReport/StaticPdfReport/" class="btn btn-outline-info">(Test)Statik Pdf Raporu</a>
+<br>
+<br>
+<a href="/PdfReport/StaticCustomerReport/" class="btn btn-outline-warning">(Test)Statik Misafir Raporu</a>
+
