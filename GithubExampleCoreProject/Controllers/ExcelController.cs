@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using BusinessLayer.Abstract;
+using ClosedXML.Excel;
 using DataAccessLayer.Concrete;
 using GithubExampleCoreProject.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,13 @@ namespace GithubExampleCoreProject.Controllers;
 
 public class ExcelController : Controller
 {
-    
+    private readonly IExcelService _excelService;
+
+    public ExcelController(IExcelService excelService)
+    {
+        _excelService = excelService;
+    }
+
     public IActionResult Index()
     {
         return View();
@@ -33,7 +40,14 @@ public class ExcelController : Controller
 
     public IActionResult StaticExcelReport()
     {
-        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+        return File(_excelService.ExcelList(DestinationList()),
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "YeniExcel.xlsx");
+        
+        
+        
+        
+        /*ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         ExcelPackage excelPackage = new ExcelPackage();
         var workSheet = excelPackage.Workbook.Worksheets.Add("Sayfa1");
         workSheet.Cells[1, 1].Value = "Rota";
@@ -49,7 +63,7 @@ public class ExcelController : Controller
         workSheet.Cells[3, 3].Value = "35";
 
         var bytes = excelPackage.GetAsByteArray();
-        return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "dosya1.xlsx");
+        return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "dosya1.xlsx");*/
     }
 
     public IActionResult DestinationExcelReport()
