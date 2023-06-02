@@ -1,10 +1,14 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Entityframework;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using GithubExampleCoreProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -21,6 +25,10 @@ builder.Services.AddLogging(x =>
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+
+builder.Services.AddAutoMapper(typeof(StartupBase));
+builder.Services.AddTransient<IValidator<AnnouncementAddDTOs>, AnnouncementValidator>();
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 builder.Services.ContainerDependencies();
 builder.Services.AddControllersWithViews().AddNToastNotifyNoty(new NotyOptions(){ProgressBar = true,Timeout = 5000,Theme = "mint"});

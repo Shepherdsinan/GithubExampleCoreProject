@@ -1,0 +1,26 @@
+﻿@model List<GithubExampleCoreProject.Areas.Admin.Models.AnnouncementListViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin/</span> Duyuru Listesi</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>İçerik</th>
+        <th>Detaylar</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+        </tr>
+    }
+</table>

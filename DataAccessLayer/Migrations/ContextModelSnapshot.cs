@@ -78,6 +78,26 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("About2s");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Announcement", b =>
+                {
+                    b.Property<int>("AnnouncementId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AnnouncementId");
+
+                    b.ToTable("Announcements");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.AppRole", b =>
                 {
                     b.Property<int>("Id")
