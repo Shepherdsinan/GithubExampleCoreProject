@@ -8,6 +8,7 @@ using EntityLayer.Concrete;
 using GithubExampleCoreProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,7 @@ builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
 builder.Services.ContainerDependencies();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddNToastNotifyNoty(new NotyOptions(){ProgressBar = true,Timeout = 5000,Theme = "mint"});
 
 builder.Services.AddMvc(config =>
 {
@@ -33,7 +34,7 @@ builder.Services.AddMvc(config =>
 });
 builder.Services.AddMvc();
 var app = builder.Build();
-
+app.UseNToastNotify();
 var path = Directory.GetCurrentDirectory();
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");

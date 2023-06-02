@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NToastNotify;
 
 namespace GithubExampleCoreProject.Areas.Admin.Controllers;
 
@@ -12,10 +13,13 @@ namespace GithubExampleCoreProject.Areas.Admin.Controllers;
 public class GuideController : Controller
 {
     private readonly IGuideService _guideService;
+    private readonly IToastNotification _toastNotification;
 
-    public GuideController(IGuideService guideService)
+
+    public GuideController(IGuideService guideService, IToastNotification toastNotification)
     {
         _guideService = guideService;
+        _toastNotification = toastNotification;
     }
 
     public IActionResult Index()
@@ -39,6 +43,7 @@ public class GuideController : Controller
         if (result.IsValid)
         {
             _guideService.TAdd(guide);
+            _toastNotification.AddSuccessToastMessage("Rehber Ekleme Başarılı");
             return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
         else
@@ -69,11 +74,13 @@ public class GuideController : Controller
     {
         var values = _guideService.TGetByID(id);
         _guideService.TDelete(values);
+        _toastNotification.AddSuccessToastMessage("Silme İşlemi başarılı");
         return RedirectToAction("Index");
     }
     public IActionResult ChangeToGuideStat(int id)
     {
         _guideService.ChangeGuideStat(id);
+        _toastNotification.AddInfoToastMessage("Rehber Durumu Değiştirildi");
         return RedirectToAction("Index", "Guide", new { area = "Admin" });
     }
 }
