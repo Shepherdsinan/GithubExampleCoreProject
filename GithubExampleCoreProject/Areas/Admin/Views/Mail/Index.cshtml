@@ -1,0 +1,26 @@
+﻿@model GithubExampleCoreProject.Models.MailRequest
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a href="#" onclick="window.history.back()">GERİ DÖN</a>
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Mail İşlemleri/</span> Yeni Mail Gönder </h4>
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Alıcı Mail Adresi")
+        <input type="text" asp-for="ReceiverMail" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Konu Başlığı")
+        <input type="text" asp-for="Subject" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Mesaj İçeriği")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Body"></textarea>
+    </div>
+    <button class="btn btn-outline-primary">Mail Gönder</button>
+</form>
