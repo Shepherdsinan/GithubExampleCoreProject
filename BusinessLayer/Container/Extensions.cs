@@ -22,5 +22,7 @@ public static class Extensions
         services.AddScoped<IGuideDal, EfGuideDal>();
         services.AddScoped<IExcelService, ExcelManager>();
         services.AddScoped<IPdfService, PdfManager>();
+        services.AddScoped<IContactUsService,ContactUsManager>();
+        services.AddScoped<IContactUsDal, EfContactUsDal>();
     }
 }
