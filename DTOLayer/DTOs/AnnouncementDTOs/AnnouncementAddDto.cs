@@ -1,6 +1,6 @@
 ﻿namespace DTOLayer.DTOs.AnnouncementDTOs;
 
-public class AnnouncementAddDTOs
+public class AnnouncementAddDto
 {
     public string? Title { get; set; }
     public string? Content { get; set; }

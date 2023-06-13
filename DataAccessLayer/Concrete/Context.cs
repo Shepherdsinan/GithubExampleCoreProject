@@ -14,7 +14,7 @@ public class Context : IdentityDbContext<AppUser, AppRole, int>
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
     //     => optionsBuilder.UseSqlite(@"Data Source=C:\Users\ANEL\RiderProjects\GithubExampleCoreProject\GithubExampleCoreProject\database.db");
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite(@"Data Source=C:\Users\ANEL\RiderProjects\GithubExampleCoreProject\GithubExampleCoreProject\database.db");
+        => optionsBuilder.UseSqlite(@"Data Source=database.db");
 
     public DbSet<About> Abouts { get; set; }
     public DbSet<About2> About2s { get; set; }
