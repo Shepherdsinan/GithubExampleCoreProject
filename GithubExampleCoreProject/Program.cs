@@ -9,6 +9,7 @@ using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using GithubExampleCoreProject.CQRS.Handlers.DestinationHandlers;
 using GithubExampleCoreProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -32,6 +33,7 @@ builder.Services.CustomerValidator();
 builder.Services.AddControllersWithViews().AddFluentValidation();
 
 builder.Services.ContainerDependencies();
+builder.Services.AddScoped<GetAllDestinationQueryHandler>();
 builder.Services.AddControllersWithViews().AddNToastNotifyNoty(new NotyOptions(){ProgressBar = true,Timeout = 5000,Theme = "mint"});
 
 builder.Services.AddMvc(config =>
