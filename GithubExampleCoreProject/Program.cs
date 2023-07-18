@@ -43,6 +43,10 @@ builder.Services.AddMvc(config =>
         .Build();
     config.Filters.Add(new AuthorizeFilter(policy));
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/SignIn";
+});
 builder.Services.AddMvc();
 var app = builder.Build();
 app.UseNToastNotify();
