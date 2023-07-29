@@ -7,4 +7,5 @@ public class GetAllDestinationQueryResult
     public string? Daynight { get; set; }
     public double Price { get; set; }
     public float Capacity { get; set; }
+    
 }

@@ -6,5 +6,5 @@ public class Newsletter
 {
     [Key]
     public int NewsletterID { get; set; }
-    public string Mail { get; set; }   
+    public string? Mail { get; set; }   
 }
