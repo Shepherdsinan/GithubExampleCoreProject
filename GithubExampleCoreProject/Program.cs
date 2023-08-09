@@ -11,6 +11,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using GithubExampleCoreProject.CQRS.Handlers.DestinationHandlers;
 using GithubExampleCoreProject.Models;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using NToastNotify;
@@ -34,6 +35,11 @@ builder.Services.AddControllersWithViews().AddFluentValidation();
 
 builder.Services.ContainerDependencies();
 builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+builder.Services.AddScoped<GetDestinationByIDQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommandHandler>();
+builder.Services.AddScoped<RemoveDestinationCommandHandler>();
+builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddControllersWithViews().AddNToastNotifyNoty(new NotyOptions(){ProgressBar = true,Timeout = 5000,Theme = "mint"});
 
 builder.Services.AddMvc(config =>

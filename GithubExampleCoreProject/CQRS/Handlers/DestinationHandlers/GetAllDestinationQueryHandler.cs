@@ -19,6 +19,7 @@ public class GetAllDestinationQueryHandler
         {
             Id = x.DestinationID,
             Capacity = x.Capacity,
+            Daynight = x.DayNight,
             City = x.City,
             Price = x.Price
         }).AsNoTracking().ToList();

@@ -1,8 +1,20 @@
 ﻿@model GetDestinationByIDQueryResult
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "GetDestination";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>title</h2>
+<h2>Lokasyon Düzenleme Sayfası</h2>
+<form method="post">
+    <input type="hidden" asp-for="DestinationId"/>
+<label>Şehir</label>
+<input type="text" asp-for="City" class="form-control"/>
+<label>Gün-Gece</label>
+<input type="text" asp-for="Daynight" class="form-control"/>
+<label>Fiyat</label>
+<input type="text" asp-for="Price" class="form-control" />
+<br/>
+<button class="btn btn-outline-success">Kaydet</button>
+</form>
+

@@ -23,10 +23,10 @@ public class DestinationController : Controller
         var values = destinationManager.TGetByID(id);
         return View(values);
     }
-
     [HttpPost]
     public IActionResult DestinationDetails(Destination p)
     {
         return View();
     }
+
 }
