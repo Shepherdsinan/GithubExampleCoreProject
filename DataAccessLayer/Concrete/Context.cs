@@ -31,4 +31,5 @@ public class Context : IdentityDbContext<AppUser, AppRole, int>
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<Announcement> Announcements { get; set; }
+    public DbSet<Account> Accounts { get; set; }
 }

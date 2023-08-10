@@ -24,26 +24,21 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description2")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image1")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title2")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("AboutID");
@@ -58,24 +53,38 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title2")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("About2ID");
 
                     b.ToTable("About2s");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Account", b =>
+                {
+                    b.Property<int>("AccountID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AccountID");
+
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Announcement", b =>
@@ -146,11 +155,9 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
@@ -160,7 +167,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedEmail")
@@ -184,7 +190,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -213,7 +218,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("CommentContent")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CommentDate")
@@ -223,7 +227,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("CommentUser")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("DestinationID")
@@ -243,23 +246,18 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Adress")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Mail")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MapLoation")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")
@@ -277,11 +275,9 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Mail")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MessageBody")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("MessageDate")
@@ -291,11 +287,9 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Subject")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ContactId");
@@ -313,35 +307,27 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CoverImage")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DayNight")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Details1")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Details2")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image2")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Price")
@@ -362,18 +348,15 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("FeatureID");
@@ -388,18 +371,15 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Feature2ID");
@@ -414,26 +394,21 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("InstagramUrl")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("TwitterUrl")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("GuideID");
@@ -448,7 +423,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Mail")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("NewsletterID");
@@ -466,21 +440,18 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("DestinationID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PersonCount")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ReservationID");
@@ -499,11 +470,9 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("SubAboutID");
@@ -518,15 +487,12 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Client")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ClientImage")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Status")

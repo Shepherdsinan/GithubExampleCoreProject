@@ -26,7 +26,8 @@ builder.Services.AddLogging(x =>
 });
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>()
+    .AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
 builder.Services.AddHttpClient();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
@@ -79,6 +80,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Default}/{action=Index}/{id?}");
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<Context>();
+    dbContext.Database.EnsureCreated();
+}
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
