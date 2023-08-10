@@ -39,7 +39,7 @@ builder.Services.AddScoped<GetDestinationByIDQueryHandler>();
 builder.Services.AddScoped<CreateDestinationCommandHandler>();
 builder.Services.AddScoped<RemoveDestinationCommandHandler>();
 builder.Services.AddScoped<UpdateDestinationCommandHandler>();
-builder.Services.AddMediatR(typeof(Program).Assembly);
+builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddControllersWithViews().AddNToastNotifyNoty(new NotyOptions(){ProgressBar = true,Timeout = 5000,Theme = "mint"});
 
 builder.Services.AddMvc(config =>
