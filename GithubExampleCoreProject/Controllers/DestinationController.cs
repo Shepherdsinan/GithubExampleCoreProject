@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Entityframework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GithubExampleCoreProject.Controllers;
 
+[AllowAnonymous]
 public class DestinationController : Controller
 {
     private DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
