@@ -9,8 +9,9 @@ public class CommentController : Controller
 {
     private CommentManager _commentManager = new CommentManager(new EfCommentDal());
     [HttpGet]
-    public PartialViewResult AddComment()
+    public PartialViewResult AddComment(int id)
     {
+        ViewBag.destId = id;
         return PartialView();
     }
 

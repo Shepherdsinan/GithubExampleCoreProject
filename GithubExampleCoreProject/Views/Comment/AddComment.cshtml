@@ -5,7 +5,7 @@
     <p class="mb-4">İşaretli alanları doldurmanız gerekmektedir. *
     </p>
     <form method="post" asp-action="AddComment" asp-controller="Comment">
-
+<input type="hidden" name="DestinationID" value="@ViewBag.destId" />
         <div class="form-group">
             <textarea name="CommentContent" class="form-control" placeholder="Yorumunuz*" required=""
                                 spellcheck="false"></textarea>

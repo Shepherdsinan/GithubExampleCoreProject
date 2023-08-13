@@ -7,7 +7,7 @@ using GithubExampleCoreProject.CQRS.Results.GuideResults;
 
 namespace GithubExampleCoreProject.CQRS.Queries.GuideQueries
 {
-    public class GetAllGuideQuery:IRequest<List<GetAllGuideQueryResult>>
+    public class GetAllGuideQuery:IRequest<List<GetAllGuideQueryResult>>, IRequest<List<Results.GuideResult.GetAllGuideQueryResult>>
     {
     }
 }

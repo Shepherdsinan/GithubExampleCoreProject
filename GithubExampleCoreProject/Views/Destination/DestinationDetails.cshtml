@@ -18,17 +18,12 @@
     rel="stylesheet">
   <!-- google fonts -->
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style-liberty.css">
+  <link rel="stylesheet" href="/Traversal-Liberty/assets/css/style-liberty.css">
   <!-- Template CSS -->
 </head>
 
 <body>
-<h1>test alanı</h1>
-<form method="get">
-    @Html.TextBoxFor(x=>x.City)
-    <br>    
-    @Html.TextBoxFor(x=>x.Capacity)
-</form>
+
 <!--header-->
 <!-- //header -->
 <!-- about breadcrumb -->
@@ -51,7 +46,7 @@
             Making your Writing more Interesting</h3>
         <div class="blog-post-align">
             <div class="blog-post-img">
-                <a href="#"><img src="~/Traversal-Liberty/assets/images/c1.jpg" alt="" class="rounded-circle img-fluid"/></a>
+                <a href="#"><img src="/Traversal-Liberty/assets/images/c1.jpg" alt="" class="rounded-circle img-fluid"/></a>
             </div>
             <div class="blog-post-info">
                 <div class="author align-items-center mb-1">
@@ -75,7 +70,7 @@
 <div class="container pb-lg-4">
 <div class="single-post-image">
     <div class="post-content">
-        <img src="assets/images/banner2.jpg" class="radius-image img-fluid mb-5" alt=""/>
+        <img src="/Traversal-Liberty/assets/images/banner2.jpg" class="radius-image img-fluid mb-5" alt=""/>
     </div>
 </div>
 <div class="single-post-content">
@@ -83,18 +78,16 @@
 
 <blockquote class="blockquote my-5">
     <div class="icon-quote"><span class="fa fa-quote-left" aria-hidden="true"></span></div>
-    Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Ea
-    consequuntur illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit
-    totam animi, dolores magnam assumenda soluta odit harum.
+Gezi Tur Seyahat Rotalar Dünya
     <footer class="blockquote-footer mt-3">
         Smith lara</footer>
 </blockquote>
     <div class="sing-post-thumb mb-5 row pt-3">
     <div class="col-sm-6">
-        <a href="#url"><img src="assets/images/g8.jpg" class="img-fluid radius-image" alt=""></a>
+        <a href="#url"><img src="@Model.CoverImage" style="width: 400px;height: 400px;" class="img-fluid radius-image" alt=""></a>
     </div>
     <div class="col-sm-6 mt-sm-0 mt-3">
-        <a href="#url"><img src="assets/images/g9.jpg" class="img-fluid radius-image" alt=""></a>
+        <a href="#url"><img src="@Model.Image2" style="width: 400px; height: 400px;" class="img-fluid radius-image" alt=""></a>
     </div>
 </div>
 <h3 class="blog-desc-big m-0 mb-lg-4 mb-3">2. paragraf</h3>
@@ -103,14 +96,16 @@
 
 <div class="d-grid left-right mt-5 pb-md-5">
     <div class="buttons-singles tags">
-        <h4>Tags :</h4>
-        <a href="#blog-tag">Travel</a>
-        <a href="#blog-tag">Culture</a>
+        <h4>Etiketler :</h4>
+        <a href="#blog-tag">Seyahat</a>
+        <a href="#blog-tag">Gezi</a>
         <a href="#blog-tag">Hotel</a>
-        <a href="#blog-tag">Food</a>
+        <a href="#blog-tag">Yemek</a>
+        <a href="#blog-tag">Tur</a>
+        <a href="#blog-tag">Dünya</a>
     </div>
     <div class="buttons-singles">
-        <h4>Share :</h4>
+        <h4>Paylaş :</h4>
         <a href="#blog-share"><span class="fa fa-facebook" aria-hidden="true"></span></a>
         <a href="#blog-share"><span class="fa fa-twitter" aria-hidden="true"></span></a>
         <a href="#blog-share"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
@@ -119,54 +114,13 @@
 </div>
 
 <!--//author-card-->
-<div class="author-card mt-5">
-    <div class="row align-items-center">
-        <div class="col-sm-3 col-6">
-            <div>
-                <img src="assets/images/c3.jpg" alt="" class="rounded-circle img-fluid">
-            </div>
-        </div>
-        <div class="col-sm-9 mt-sm-0 mt-3">
-            <h3 class="mb-3 title">Alexander Ronald</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, sed et excepturi.
-                Distinctio fugit odit? Fugit ipsam. Lorem ipsum dolor sit.
-            </p>
-            <ul class="author-icons mt-4">
-                <li>
-                    <a class="facebook" href="#url">
-                        <span class="fa fa-facebook"
-                              aria-hidden="true"></span></a> </li>
-                <li>
-                    <a class="twitter" href="#url">
-                        <span class="fa fa-twitter"
-                              aria-hidden="true"></span></a></li>
-                <li>
-                    <a class="google" href="#url">
-                        <span class="fa fa-google-plus"
-                              aria-hidden="true"></span></a></li>
-                <li>
-                    <a class="linkedin" href="#url">
-                        <span class="fa fa-linkedin"
-                              aria-hidden="true"></span></a></li>
-                <li>
-                    <a class="github" href="#url">
-                        <span class="fa fa-github"
-                              aria-hidden="true"></span></a>
-                </li>
-                <li>
-                    <a class="dribbble" href="#url">
-                        <span class="fa fa-dribbble"
-                              aria-hidden="true"></span></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("_GuideDetails")
 <!--//author-card-->
 
 
 @await Component.InvokeAsync("_CommentList", new {id = ViewBag.i})
 
-@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
+@await Html.PartialAsync("~/Views/Comment/AddComment.cshtml",new {id = ViewBag.destId})
 </div>
 </div>
 <!--//blog-post--></div>
@@ -176,8 +130,8 @@
 
 
 <!-- Template JavaScript -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="assets/js/theme-change.js"></script>
+<script src="Traversal-Liberty/assets/js/jquery-3.3.1.min.js"></script>
+<script src="Traversal-Liberty/assets/js/theme-change.js"></script>
 <!--/MENU-JS-->
 <script>
     $(window).on("scroll", function () {
@@ -207,7 +161,7 @@
   </script>
 <!--//MENU-JS-->
 
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="Traversal-Liberty/assets/js/bootstrap.min.js"></script>
 
 </body>
 

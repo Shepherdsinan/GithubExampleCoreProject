@@ -9,4 +9,7 @@ public class Comment
     public bool CommentState { get; set; }
     public int DestinationID { get; set; }
     public Destination? Destination { get; set; }
+    
+    public int? AppUserId { get; set; }
+    public AppUser? AppUser { get; set; }
 }

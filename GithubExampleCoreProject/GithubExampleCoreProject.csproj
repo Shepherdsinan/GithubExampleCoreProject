@@ -44,8 +44,11 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Pages\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="Areas\Member\Pages\" />
+    <Folder Include="CQRS/Handlers/GuideHandler/" />
+    <Folder Include="CQRS\Commands\" />
     <Folder Include="Pages\" />
     <Folder Include="wwwroot\userimages\" />
   </ItemGroup>
