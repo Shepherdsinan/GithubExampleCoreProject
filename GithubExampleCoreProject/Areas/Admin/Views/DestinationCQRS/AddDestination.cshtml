@@ -1,0 +1,21 @@
+@model CreateDestinationCommand
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
+}
+
+<h2>Yeni Tur Rotası Ekleme Sayfası</h2>
+<form method="post">
+    <label >Şehir Adı</label>
+    <input type="text" asp-for="City" class="form-control"/>
+    <label >Gün-Gece Sayısı</label>
+    <input type="text" asp-for="DayNight" class="form-control"/>
+    <label >Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control"/>
+    <label >Kapasite</label>
+    <input type="text" asp-for="Capacity" class="form-control"/>
+<br/>
+<button class="btn btn-outline-primary">Tur Rotasını Kaydet</button>
+</form>
+
